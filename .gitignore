@@ -3,3 +3,7 @@
 ################################################################################
 
 /cxc-back/bin/Debug/net5.0
+/.vs/cxc-back
+/cxc-back/obj
+/cxc-back.Testing/bin/Debug/net5.0
+/cxc-back.Testing/obj
