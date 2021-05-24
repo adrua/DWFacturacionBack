@@ -29,11 +29,12 @@ from inv.productos as p
 
 --Obtener la última fecha de compra de un cliente y según su frecuencia de compra 
 --estimar en qué fecha podría volver a comprar.
-select c.ClienteId, c.ClienteRazonSocial, v.LastSale, DateAdd(Day, DateDiff(day, V.LastSale, v.FirstSale), v.LastSale) as NextSale
+select c.ClienteId, c.ClienteRazonSocial, v.LastSale, DateAdd(Day, DateDiff(day, V.LastSale, v.FirstSale) / Sales, v.LastSale) as NextSale
 from cnt.Clientes as c, 
 	 (select f.ClienteId, 
 			min(f.FacturaFecha) as FirstSale,  
-			max(f.FacturaFecha) as LastSale
+			max(f.FacturaFecha) as LastSale,
+			count(*) as Sales
 		from cnt.Facturas as f
 		group by f.ClienteId) as v
 where c.ClienteId = v.ClienteId 
