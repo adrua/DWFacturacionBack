@@ -19,7 +19,7 @@ using Cxc.TablasBasicas.Models;
 
 namespace Cxc.TablasBasicas.DataLayer.Models
 {
-    //[Authorize(Policy = "Bearer")]
+    [Authorize(Policy = "Bearer")]
     public class CntClientesController : ODataController
 	{	
         private readonly ILogger<CntClientesController> logger;

@@ -21,6 +21,8 @@ namespace Cxc.TablasBasicas.Models
         [MaxLength(20)]
         public string ClienteNit {get; set;}
 
+        public int ClienteEdad {get; set;}
+
         [MaxLength(6)]
         public string CodigoCiiuId {get; set;}
 

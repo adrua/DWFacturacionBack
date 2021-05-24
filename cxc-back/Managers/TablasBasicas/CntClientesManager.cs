@@ -1,11 +1,16 @@
 //CntClientesManager.cs
 using System;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.OData.Deltas;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Mvc;
 
+using Cxc.Models;
+using Cxc.Security.Models;
 using Cxc.TablasBasicas.Interfaces;
 using Cxc.TablasBasicas.Models;
 
@@ -25,7 +30,7 @@ namespace Cxc.TablasBasicas.Managers
             this.logger = logger;
             this.context = context;
             this.httpContextAccessor = httpContextAccessor;
-            //this.userId = ApplicationUserTokenHelper.GetIdFromAuthorization(httpContextAccessor.HttpContext.Request);
+            this.userId = ApplicationUserTokenHelper.GetIdFromAuthorization(httpContextAccessor.HttpContext.Request);
         }
 
         IQueryable<CntClientes> ICntClientesManager.GetAll()
