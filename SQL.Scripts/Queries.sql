@@ -15,8 +15,8 @@ go
 select *
 from cnt.Clientes as c
 where  EXISTS (select * from cnt.Facturas as f where c.ClienteId = f.ClienteId and f.FacturaFecha between '2000-02-01' and '2000-05-25' ) 
-and c.ClienteTipoID = 2
--- and ClienteEdad <= 35 
+and c.ClienteTipoID >= 1
+and c.ClienteEdad <= 35 
 --Obtener el valor total vendido por cada producto en el año 2000 
 select ProductoLinea, ProductoDescripcion, 
 			(select sum(fm.FacturaMovimientoTotal) 

@@ -1,14 +1,9 @@
 //CntClientesController.cs
-using System;
 using System.Threading;
-using System.Threading.Tasks;
-
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 using Microsoft.AspNetCore.OData.Deltas;
-using Microsoft.AspNetCore.OData.Formatter;
 using Microsoft.AspNetCore.OData.Query;
 using Microsoft.AspNetCore.OData.Routing.Controllers;
 
@@ -19,7 +14,7 @@ using Cxc.TablasBasicas.Models;
 
 namespace Cxc.TablasBasicas.DataLayer.Models
 {
-    [Authorize(Policy = "Bearer")]
+    //[Authorize(Policy = "Bearer")]
     public class CntClientesController : ODataController
 	{	
         private readonly ILogger<CntClientesController> logger;
